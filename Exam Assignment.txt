@@ -1,0 +1,187 @@
+Exam Project 2
+important Read
+Please read the following instructions carefully. If any part is unclear or you have questions, contact the designated teachers through Microsoft Teams direct message. Discussing the course assignment in class channels is strictly prohibited. Additionally, any discussions about the Exam Project outside of official teacher-student communications, including private messages or in-person conversations with classmates, are not allowed.
+
+If you are struggling to understand the Exam Project instructions, contacting your teachers for help is perfectly acceptable. Please understand that the teachers cannot give students the answers or step-by-step instructions on how to implement course assignment requirements, as the Course Assignments, Projects and Exams are graded assessments. Teachers can, however, give clarification on Exam Project instructions if needed.
+
+
+
+The Exam Project will be graded "A to F".
+
+F - 0-39 - Failed the course and have to do a Resit.
+E - 40-49
+D - 50-59
+C - 60-79
+B - 80-89
+A - 90-100
+The following is tested in the Exam Project:
+
+Database design/queries
+API design / Testing / Documentation
+Documentation / Planning
+Logical thinking and problem-solving skills
+Basic front-end skills
+important Repository
+The Git Classroom link for this assignment will be posted in your class channel on Microsoft Teams on the day the assignment opens. Expect the link by 09H00 when the assignments open.
+Your private GIT repository for this assignment will be created once you accept the assignment, accessible only by you, the course instructors and graders.
+
+Only commits made in the Git Classroom will be considered for grading. Any repositories you create outside the provided Git Classroom link will not be graded. Ensure all your work is committed before the course assignment deadline.  After the deadline, you cannot commit any more code to your repository or Git classroom. Any attempts to commit after the deadline will be automatically rejected.
+
+
+VIDEO LINK: Accepting Course Assignments
+
+importantSubmission
+Remember to create a .gitignore file and exclude the relevant files or folders.
+Your README file must be committed to the GitHub Classroom repository and must include the following:
+
+Any external libraries used in the project
+Detailed instructions on how to run your application
+Your application must be pushed to your GitHub Classroom repository BEFORE the course assignment deadline.
+Moodle submission:
+
+The text file must include the link to your repository and your GitHub username
+This .txt file must be submitted on Moodle
+The file must be named as follows "FName_LName_EP2_CA_ClassXXYY.txt"
+(Replace 'Class' with your class, e.g. 'Aug', 'Oct', etc)
+(Replace 'XX' with your class year e.g. 22, 23)
+(Replace 'YY' with either FT for Fulltime, or PT for Parttime)
+EXAMPLE: JOHN_DOE_EP2_CA_JAN24FT.txt
+
+Commits or submissions past the deadline will not be considered for grading.
+Late submissions will not be accepted, and there will be no exceptions to this rule.
+
+Failure to submit this file to Moodle OR push (commit) your code to the git classroom will result in a not passed grade
+ 
+Clinic Appointment Booking System
+
+This Exam Project is graded as a whole, meaning that front-end and back-end must be submitted to obtain a grade.
+ 
+
+NOTE: Due to the application's execution on a local host, a CORS error may occur when attempting to run both the front-end and back-end on different ports. The following Documentation can be used to investigate and the cause of this error and configure your project accordingly: https://learn.microsoft.com/en-us/aspnet/core/security/?view=aspnetcore-8.0 
+
+
+Scenario
+A group of medical clinics has decided to offer patients an online Appointment Booking system. They have approached you to develop this system.
+It must take the form of a full-stack web application (Front-end, Back-end, Database) that allows patients to book a doctor's appointment without registering or logging in to the system.
+
+ 
+
+For this Exam Project, you are required to create the following:
+
+To be created
+
+Required technology
+
+Database
+
+MySQL
+
+REST API back-end
+
+ASP.NET Core with Entity Framework
+
+Front-end interface
+
+React
+
+API Documentation
+
+Swagger
+
+
+
+Database
+A MySQL Database must be created and used for this application. The database must be designed in the 3rd normal form.
+
+A Code-First development approach should be used to create the database.
+
+The tables must include relevant columns and data types.
+
+All relevant relationships between tables must also be created.
+The initial database creation, all database operations and queries must be performed using Entity Framework.
+
+DB Requirements:
+Each doctor has a Speciality (Some have the same Speciality).
+A patient can have more than one appointment. For each appointment there would be one category and an appointment will be specific to one clinic. A clinic can have more than one doctor, and each doctor has a specific speciality. Remember to account for many doctors having the same speciality.
+
+
+
+
+Back-end
+An ASP.NET Core REST API must be created as the back-end of this application.
+
+Entity Framework must be used as the ORM.
+
+REST API endpoints must be created to facilitate CRUD operations for all tables in the database.
+
+All endpoints must return the correct results as JSON objects.
+
+Validation must exist to prevent duplicate data records being added to the database.
+
+Validation must exist to check for existing dependencies before deletion of database records.
+
+If you require more endpoints in your back-end, they can be added to the project (Remember to specify these in your README file too).
+
+ 
+
+Patients:
+Any patient should be able to use the system without authentication (i.e., no registration or login required). However, when a patient creates an appointment, some patient information must be stored in the database. The following are examples of some Patient data that is commonly captured by online booking systems:
+First name
+Last name
+Email
+Social Security Number
+Birthdate
+Gender
+Tax Number
+Religion
+Email address
+Driver’s License Number
+Medical Insurance Member Number
+IMPORTANT: For this Clinic Appointment Booking System, ensure that only the Non-Sensitive PII from this list is stored in the database.
+
+Appointments:
+When creating an Appointment, validation should exist to ensure that a clashing appointment is not created. For example, a patient at a clinic cannot book 2 appointments at the same time.
+Search:
+Create a single API endpoint allowing users to search for a doctor's first name or last name. This search should return a JSON object as a result, containing:
+The doctor’s full name
+The name of the clinic where the doctor is assigned
+The name of the doctor’s speciality
+LINQ or raw SQL can be used for the database query in this endpoint. Ensure that adequate validation has been implemented for this endpoint.
+
+
+
+Front-end
+Your Exam Project must include a separate Front-end Interface.
+The front-end system must only use API endpoints created in the back-end.
+
+The front-end should be implemented as follows:
+
+The application should have simple loading element that is displayed to the user while it processes network requests to the server.
+The application should contain a simple header containing a navigation bar, as well as a footer with the current year displayed on all pages.
+The application does not require a login screen.
+The appointment booking page should be the first page that is displayed at the root (‘/’) of the application.
+UI component libraries may optionally be used to enhance the look and feel of the application.
+A patient should be able to book an appointment. Patient information such as first, last name, and date of birth of the patient should be supplied, as well as appointment details such as the doctor chosen (from a dynamically loaded Select element with options from the database), appointment date, and appointment duration (in minutes). Appropriate error messages should be displayed to the user if the appointment form is invalid, including if the date and time chosen for the appointment is already booked by another patient (i.e., Validation).
+A search page where a doctor’s first or last name can be entered and a list of details, such as the full name, clinic name, and the doctor’s speciality, can be populated. If the doctor could not be found, an appropriate message should be displayed to the user.
+The application should have routes for the above functionality using a path of ‘/book’ and ‘/search’ respectively.
+Attention should be given to user experience and functionality when designing the front-end.
+
+
+
+Documentation
+API Documentation
+The API documentation (Swagger) must include methods and JSON objects. It must be accessible from the endpoint /doc from the API URL.
+
+For example: http://localhost:3000/doc
+
+
+
+README
+A description of each endpoint must be specified in the README file.
+This must be indicated in the project’s README file under the heading "ENDPOINTS".
+Students must indicate where they have received help or used outside knowledge for their Exam Project. This must be indicated in the project’s README file under the heading "REFERENCES". This would include:
+
+Acknowledgments of any help received from other students (If the student is working in a mentor group)
+Any code or knowledge that has been sourced from internet forums, textbooks, AI-generated code, etc.
+NOTE: Each project is checked for plagiarism using various tools and software. Therefore, this step is VERY IMPORTANT.
+
